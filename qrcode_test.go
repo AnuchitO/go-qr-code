@@ -15,3 +15,10 @@ func TestCreateQRCode(t *testing.T) {
 	b := bytes.NewBuffer(png)
 	fmt.Printf("% #v\n", b.String())
 }
+
+func TestWriteQRCodeToFile(t *testing.T) {
+	err := WriteQRCodeToFile("qr.png", "http://www.google.com")
+	if err != nil {
+		t.Error(err.Error())
+	}
+}
